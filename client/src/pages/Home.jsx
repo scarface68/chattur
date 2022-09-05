@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid"
 // icons
 import { NewCallIcon, JoinCallIcon } from "../Icons"
 
-import { Link  } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Home = () => {
   const months = [
@@ -57,9 +57,9 @@ const Home = () => {
   }
 
   return (
-    <div className="flex flex-col justify-center bg-darkBlue1 min-h-screen text-slate-400 content-center ">
+    <div className="flex flex-col justify-center bg-darkBlue1 dark:bg-wdarkBlue1 min-h-screen text-slate-400 content-center">
       <div className="flex flex-row justify-center p-3 md:p-4">
-        <div className="text-center flex flex-col justify-center md:h-52 w-[28rem] bg-slate-500 rounded md:rounded-2xl p-3">
+        <div className="text-center flex flex-col justify-center md:h-52 w-[28rem] bg-slate-500 dark:bg-wslate rounded md:rounded-2xl p-3">
           <div>
             <p className="md:text-7xl text-4xl text-white">
               {`${
@@ -88,27 +88,30 @@ const Home = () => {
                   desc="Create a new meeting"
                   icon={<NewCallIcon />}
                   iconBgColor="lightYellows"
-                  bgColor="bg-yellow"
+                  bgColor="bg-yellow dark:bg-wyellow"
                   route={`/room/`}
                   onClick={roomIDGenerate}
                   box={false}
                 />
               </button>
             </Link>
-            <button onClick={showPrompt} >
+            <button onClick={showPrompt}>
               <HomeCard
                 title="Join Meeting"
                 desc="via invitation link"
                 icon={<JoinCallIcon />}
-                bgColor="bg-darkBlue1"
+                bgColor="bg-blue dark:bg-wblue"
+                // onClick={showPrompt}
                 box={true}
-                className="border border-3"
               />
             </button>
             {modal ? <JoinMeetingPopCard closeModal={toggleModal} /> : null}
           </div>
         </div>
       </div>
+      <footer className="bg-inherit inset-x-0 bottom-0 text-xs font-semibold dark:text-gray absolute text-slate-400 md:justify-between mb-0 ">
+        <p className="text-center">© made with ❤️ by khuntia, sai and suraj</p>
+      </footer>
     </div>
   )
 }

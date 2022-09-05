@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       border: {
@@ -21,7 +22,16 @@ module.exports = {
         lightGray: "#444f5aff",
         yellow: "#4DEEDB",
         lightYellow: "#fedb39ff",
-        red: "#dd3d3dff"
+        red: "#dd3d3dff",
+        //dark colours
+        wdarkBlue1: "#e5e5e5",
+        wdarkBlue2: "#e5e5e5",
+        wslate: "#64748b",
+        wyellow: "#ffcb42ff",
+        wblue: "#0096ffff",
+        roomBg: "#e5e5e5",
+        messageBg: "#161B22",
+        wlightGray: "#444f5aff"
       },
       scale: {
         "-1": "-1"

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 
 const NotFound = () => {
   return (
-    <main className="relative flex items-center justify-center h-screen bg-darkBlue2">
+    <main className="relative flex items-center justify-center h-screen bg-darkBlue2 dark:bg-wdarkBlue2">
       <div className="xl:pb-20 flex flex-col">
-        <main className="flex-grow flex flex-col text-white justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+        <main className="flex-grow flex flex-col text-white dark:text-black justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-16">
             <div className="text-center">
               <p className="text-sm font-semibold text-blue uppercase tracking-wide">
@@ -13,7 +13,7 @@ const NotFound = () => {
                   <font style={{ verticalAlign: "inherit" }}>Error 404</font>
                 </font>
               </p>
-              <h1 className="mt-2 text-4xl font-extrabold text-gris dark:text-white tracking-tight sm:text-5xl">
+              <h1 className="mt-2 text-4xl font-extrabold text-gris tracking-tight sm:text-5xl">
                 <font style={{ verticalAlign: "inherit" }}>
                   <font style={{ verticalAlign: "inherit" }}>
                     Page not found.

@@ -5,7 +5,7 @@ const LogoutConfirmation = ({ yesLogout, cancel }) => {
     <>
       <div
         tabIndex={-1}
-        className="overflow-y-auto backdrop-blur-sm overflow-x-hidden drop-shadow-md fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full justify-center items-center flex"
+        className="overflow-y-auto backdrop-blur-sm overflow-x-hidden drop-shadow-md fixed top-0 right-0 left-0 z-50  h-modal md:h-full justify-center items-center flex"
         aria-modal="true"
         role="dialog"
       >
