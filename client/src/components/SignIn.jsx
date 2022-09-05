@@ -21,7 +21,7 @@ const SignIn = ({ goTo }) => {
   const notify = () => toast.error("Wrong email or password")
 
   return (
-    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-darkBlue1">
+    <div className="relative flex flex-col justify-center min-h-screen overflow-hidden bg-darkBlue1 dark:bg-wdarkBlue1">
       <div className="w-96 p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
         <h1 className="text-3xl font-semibold text-center text-purple-700 uppercase">
           Sign in
