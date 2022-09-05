@@ -10,10 +10,7 @@ import Home from "./pages/Home"
 import Room from "./pages/Room"
 import NotFound from "./pages/NotFound"
 
-import { useAuth } from "./auth/Authentication"
-
 const App = () => {
-  const { user } = useAuth()
   return (
     <div className="flex">
       <div className="h-screen max-h-screen overflow-hidden w-full">

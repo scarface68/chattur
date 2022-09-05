@@ -108,6 +108,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <footer className="bg-darkBlue1 inset-x-0 bottom-0   absolute text-gray shadow md:justify-between mb-0 dark:bg-gray-800">
+    <p className="text-center">© made by khuntia, sai and suraj</p>
+    </footer>
     </div>
   )
 }
