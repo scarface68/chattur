@@ -313,7 +313,7 @@ const Room = () => {
                   {showChat && (
                     <motion.div
                       layout
-                      className="flex flex-col w-[30%] flex-shrink-0 border-l-2 border-lightGray"
+                      className="flex flex-col w-full sm:w-[30%] flex-shrink-0 border-l-2 border-lightGray"
                     >
                       <div
                         className="flex-shrink-0 overflow-y-scroll"
