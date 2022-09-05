@@ -6,7 +6,7 @@ const HomeCard = ({ icon, title, desc, bgColor, route, box }) => {
       className={` p-3 md:p-6 rounded md:rounded-2xl md:h-52 md:w-auto w-full md:aspect-square group shadow-2xl drop-shadow-md shadow-white/10 ${
         box
           ? "bg-darkBlue1 dark:bg-wdarkBlue1 border-2 dark:border-black"
-          : "bg-yellow dark:bg-yellow/80"
+          : "bg-yellow dark:bg-yellow/80 border-2 border-yellow"
       }`}
     >
       <div className="flex md:h-full items-center md:flex-col md:items-start md:justify-between gap-2">

@@ -43,7 +43,7 @@ const Header = () => {
           onClick={goHome}
         >
           <img className="h-9 pr-3 aspect-sqaure" src={Logo} alt="logo" />
-          <button onClick={goHome}>Chattur</button>
+          <button className="hidden sm:inline" onClick={goHome}>Chattur</button>
         </div>
       </div>
       <div>
@@ -88,7 +88,7 @@ const Header = () => {
         ) : (
           <>
             <Link to="/signup">
-              <button className="bg-transparent border-inherit py-1 px-5 text-white  font-semibold text-xs cursor-pointer rounded border-2 border-transparent hover:border-yellow hover:bg-transparent hover:text-yellow duration-200">
+              <button className="bg-transparent border-inherit py-1 px-5 text-white hidden sm:inline font-semibold text-xs cursor-pointer rounded border-2 border-transparent hover:border-yellow hover:bg-transparent hover:text-yellow duration-200">
                 Sign up
               </button>
             </Link>
