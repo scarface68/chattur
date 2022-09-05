@@ -1,5 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { FaSun, FaMoon } from "react-icons/fa"
+import { ThemeContext } from "../auth/ThemeContext"
 
 import { LogOutIcon } from "../Icons"
 
@@ -10,6 +12,7 @@ import { LogoutConfirmation } from "./"
 import Logo from "../images/logo512.png"
 
 const Header = () => {
+  const { theme, setTheme } = useContext(ThemeContext)
   const navigate = useNavigate()
   const { user, logout } = useAuth()
 
@@ -39,6 +42,22 @@ const Header = () => {
           <button onClick={goHome}>Chattur</button>
         </div>
       </div>
+      <div>
+        <div className="transition mr-4 duration-500 ease-in-out rounded-full p-2">
+          {theme === "dark" ? (
+            <FaSun
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+            />
+          ) : (
+            <FaMoon
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
+            />
+          )}
+        </div>
+      </div>
+
       <div>
         {user ? (
           <div className="relative group h-9 w-9 rounded-full overflow-hidden aspect-square">
