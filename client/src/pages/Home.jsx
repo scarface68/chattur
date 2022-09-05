@@ -5,7 +5,7 @@ import { v4 as uuid } from "uuid"
 // icons
 import { NewCallIcon, JoinCallIcon } from "../Icons"
 
-import { Link  } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const Home = () => {
   const months = [
@@ -95,22 +95,23 @@ const Home = () => {
                 />
               </button>
             </Link>
-            <button onClick={showPrompt} >
+            <button onClick={showPrompt}>
               <HomeCard
                 title="Join Meeting"
                 desc="via invitation link"
                 icon={<JoinCallIcon />}
                 bgColor="bg-blue dark:bg-wblue"
                 // onClick={showPrompt}
+                box={true}
               />
             </button>
             {modal ? <JoinMeetingPopCard closeModal={toggleModal} /> : null}
           </div>
         </div>
       </div>
-      <footer className="bg-darkBlue1 inset-x-0 bottom-0   absolute text-gray shadow md:justify-between mb-0 dark:bg-gray-800">
-    <p className="text-center">© made by khuntia, sai and suraj</p>
-    </footer>
+      <footer className="bg-inherit inset-x-0 bottom-0 text-xs font-semibold dark:text-gray absolute text-slate-400 md:justify-between mb-0 ">
+        <p className="text-center">© made with ❤️ by khuntia, sai and suraj</p>
+      </footer>
     </div>
   )
 }

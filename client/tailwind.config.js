@@ -1,6 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       border: {
@@ -24,14 +24,14 @@ module.exports = {
         lightYellow: "#fedb39ff",
         red: "#dd3d3dff",
         //dark colours
-        wdarkBlue1: "#ffffff",
-        wdarkBlue2: "#ffffff",
+        wdarkBlue1: "#e5e5e5",
+        wdarkBlue2: "#e5e5e5",
         wslate: "#64748b",
         wyellow: "#ffcb42ff",
         wblue: "#0096ffff",
-        roomBg: "#08080c",
-        messageBg: "#08080c",
-        wlightGray: "#444f5aff",
+        roomBg: "#e5e5e5",
+        messageBg: "#161B22",
+        wlightGray: "#444f5aff"
       },
       scale: {
         "-1": "-1"

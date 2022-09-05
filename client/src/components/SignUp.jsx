@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { GoogleIcon } from "../Icons"
-import { useAuth } from "../auth/Authentication"
+import { useAuth } from "../context/Authentication"
 
 import { useNavigate } from "react-router-dom"
 

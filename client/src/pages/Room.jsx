@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState, useRef } from "react"
 import { useNavigate, useParams } from "react-router-dom"
@@ -8,7 +9,7 @@ import Peer from "simple-peer"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-import { useAuth } from "../auth/Authentication"
+import { useAuth } from "../context/Authentication"
 import { MeetGridCard, Loading, SignIn } from "../components"
 
 //sounds
@@ -53,6 +54,8 @@ const Room = () => {
   const localVideo = useRef()
   // user
   const { user } = useAuth()
+  let currName = (user?.email).substring(0, user?.email.indexOf("@"))
+  currName = currName.charAt(0).toUpperCase() + currName.slice(1)
 
   //functions
   const notify = () => toast.success("Link has been copied!")
@@ -274,7 +277,7 @@ const Room = () => {
                             className="h-full w-full object-cover rounded-lg scale-x-[-1]"
                           />
                           {!videoActive && (
-                            <div className="absolute top-0 left-0 bg-lightGray h-full w-full flex items-center justify-center">
+                            <div className="absolute top-0 left-0 bg-lightGray dark:bg-black h-full w-full flex items-center justify-center">
                               <img
                                 className="h-[35%] max-h-[150px] w-auto rounded-full aspect-square object-cover"
                                 src={user?.photoURL}
@@ -298,7 +301,6 @@ const Room = () => {
                           </div>
                         </motion.div>
                         {peers.map((peer) => (
-                          // console.log(peer),
                           <MeetGridCard
                             key={peer?.peerID}
                             user={peer.user}
@@ -319,7 +321,7 @@ const Room = () => {
                           height: "calc(100vh - 192px)"
                         }}
                       >
-                        <div className="flex flex-col bg-darkBlue1 w-full border-b-2 border-gray">
+                        <div className="flex flex-col bg-darkBlue1 dark:bg-lightGray w-full border-b-2 border-t-2 border-gray">
                           <div
                             className="flex items-center w-full p-3 cursor-pointer"
                             onClick={() =>
@@ -353,19 +355,17 @@ const Room = () => {
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ duration: 0.08 }}
                                 exit={{ opacity: 0 }}
-                                whileHover={{ scale: 1.05 }}
-                                className="p-2 flex bg-gray items-center transition-all hover:bg-slate-900 gap-2 rounded-lg"
+                                className="p-2 flex bg-gray items-center transition-all gap-2 rounded-lg"
                               >
                                 <img
                                   src={
                                     user.photoURL ||
                                     "https://parkridgevet.com.au/wp-content/uploads/2020/11/Profile-300x300.png"
                                   }
-                                  alt={user.displayName || "Anonymous"}
                                   className="block w-8 h-8 aspect-square rounded-full mr-2"
                                 />
                                 <span className="font-medium text-sm">
-                                  {user.displayName || "Anonymous"}
+                                  {"You"}
                                 </span>
                               </motion.div>
                               {peers.map((user) => (
@@ -376,19 +376,17 @@ const Room = () => {
                                   transition={{ duration: 0.08 }}
                                   exit={{ opacity: 0 }}
                                   key={user.peerID}
-                                  whileHover={{ scale: 1.05 }}
-                                  className="p-2 flex bg-gray items-center transition-all hover:bg-slate-900 gap-2 rounded-lg"
+                                  className="p-2 flex bg-gray items-center transition-all  gap-2 rounded-lg"
                                 >
                                   <img
                                     src={
                                       user.user.photoURL ||
                                       "https://parkridgevet.com.au/wp-content/uploads/2020/11/Profile-300x300.png"
                                     }
-                                    alt={user.user.name || "Anonymous"}
                                     className="block w-8 h-8 aspect-square rounded-full mr-2"
                                   />
                                   <span className="font-medium text-sm">
-                                    {user.user.name || "Anonymous"}
+                                    {user.user.name || currName}
                                   </span>
                                 </motion.div>
                               ))}
@@ -396,7 +394,7 @@ const Room = () => {
                           </motion.div>
                         </div>
                         <div className="h-full">
-                          <div className="flex items-center bg-darkBlue1 p-3 w-full">
+                          <div className="flex items-center bg-darkBlue1 dark:bg-lightGray p-3 w-full">
                             <div className="text-xl text-slate-400">
                               <ChatIcon />
                             </div>
@@ -421,7 +419,7 @@ const Room = () => {
                               <motion.div
                                 layout
                                 initial={{
-                                  y: msg.send ? 250 : 250,
+                                  y: msg.send ? 250 : -250,
                                   opacity: 0
                                 }}
                                 animate={{ y: 0, opacity: 1 }}
@@ -439,7 +437,7 @@ const Room = () => {
                                   alt={msg?.user.name}
                                   className="h-8 w-8 aspect-square rounded-full object-cover"
                                 />
-                                <p className="bg-darkBlue1 py-2 px-3 text-xs w-auto max-w-[87%] rounded-lg border-2 border-lightGray">
+                                <p className="bg-darkBlue1 dark:bg-lightGray py-2 px-3 text-xs w-auto max-w-[87%] rounded-lg border-2 border-slate-400/40">
                                   {msg?.message}
                                 </p>
                               </motion.div>
@@ -468,7 +466,7 @@ const Room = () => {
                                 </button>
                               )}
                             </div>
-                            <div> 
+                            <div>
                               <button className="bg-yellow h-10 text-black text-md aspect-square rounded-lg flex items-center justify-center">
                                 <SendIcon />
                               </button>
@@ -479,7 +477,7 @@ const Room = () => {
                     </motion.div>
                   )}
                 </motion.div>
-                <div className="w-full h-16 bg-darkBlue1  p-3">
+                <div className="w-full h-16 bg-darkBlue1 dark:bg-lightGray  p-3">
                   <div className="flex items-center justify-center">
                     <div className="flex gap-4">
                       <motion.div whileTap={{ scale: 0.9 }}>

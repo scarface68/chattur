@@ -2,8 +2,8 @@ import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
 import "./index.css"
-import { AuthProvider } from "./auth/Authentication"
-import { ThemeProvider } from "./auth/ThemeContext"
+import { AuthProvider } from "./context/Authentication"
+import { ThemeProvider } from "./context/ThemeContext"
 import { BrowserRouter as Router } from "react-router-dom"
 
 ReactDOM.render(
