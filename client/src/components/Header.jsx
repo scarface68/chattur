@@ -43,7 +43,7 @@ const Header = () => {
           onClick={goHome}
         >
           <img className="h-9 pr-3 aspect-sqaure" src={Logo} alt="logo" />
-          <button className="hidden sm:inline" onClick={goHome}>Chattur</button>
+          <button  onClick={goHome}>Chattur</button>
         </div>
       </div>
       <div>
