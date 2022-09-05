@@ -230,7 +230,7 @@ const Room = () => {
                 >
                   <motion.div
                     layout
-                    className="flex flex-col bg-darkBlue2 justify-between w-full"
+                    className="flex flex-col bg-darkBlue2 dark:bg-roomBg justify-between w-full"
                   >
                     <div
                       className="flex-shrink-0 overflow-y-scroll p-1"
@@ -415,7 +415,7 @@ const Room = () => {
                             ref={chatScroll}
                             className={`${
                               chatBoxOpen ? "block" : "hidden"
-                            } p-3 h-full overflow-y-scroll flex flex-col gap-4`}
+                            } p-3 h-full overflow-y-scroll dark:bg-messageBg flex flex-col gap-4`}
                           >
                             {msgs.map((msg, index) => (
                               <motion.div

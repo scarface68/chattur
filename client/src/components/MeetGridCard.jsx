@@ -22,7 +22,7 @@ const MeetGridCard = ({ user, peer }) => {
   return (
     <motion.div
       layout
-      className={`relative bg-lightGray rounded-lg shrink-0 aspect-video overflow-hidden ${
+      className={`relative bg-lightGray dark:bg-wlightGray rounded-lg shrink-0 aspect-video overflow-hidden ${
         pin && "md:col-span-2 md:row-span-2 md:col-start-1 md:row-start-1"
       }`}
     >
