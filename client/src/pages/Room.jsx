@@ -54,8 +54,11 @@ const Room = () => {
   const localVideo = useRef()
   // user
   const { user } = useAuth()
-  let currName = (user?.email).substring(0, user?.email.indexOf("@"))
-  currName = currName.charAt(0).toUpperCase() + currName.slice(1)
+  
+  let currName = (user?.email)?.substring(0, user?.email.indexOf("@"))
+  currName = user ? currName.charAt(0).toUpperCase() + currName.slice(1) : "Anonymous"
+
+  // console.log(currName);
 
   //functions
   const notify = () => toast.success("Link has been copied!")
