@@ -589,7 +589,7 @@ const Room = () => {
           )}
         </AnimatePresence>
       ) : (
-        <SignIn goTo="/" />
+        <SignIn />
       )}
     </>
   )
