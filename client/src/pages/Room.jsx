@@ -586,7 +586,7 @@ const Room = () => {
           )}
         </AnimatePresence>
       ) : (
-        <SignIn goTo={window.location.href} />
+        <SignIn goTo="/" />
       )}
     </>
   )
