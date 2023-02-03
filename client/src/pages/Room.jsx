@@ -54,9 +54,15 @@ const Room = () => {
   const localVideo = useRef()
   // user
   const { user } = useAuth()
-  
-  let currName = (user?.email)?.substring(0, user?.email.indexOf("@"))
-  currName = user ? currName.charAt(0).toUpperCase() + currName.slice(1) : "Anonymous"
+
+  function formatName(user) {
+    let currName = user?.email?.substring(0, user?.email.indexOf("@"))
+    currName = user
+      ? currName.charAt(0).toUpperCase() + currName.slice(1)
+      : "Anonymous"
+
+      return currName
+  }
 
   // console.log(currName);
 
@@ -122,9 +128,7 @@ const Room = () => {
 
   useEffect(() => {
     const unsub = () => {
-      socket.current = io.connect(
-        process.env.REACT_APP_BACKEND_URL || "http://localhost:5000"
-      )
+      socket.current = io.connect("http://localhost:5000")
       socket.current.on("message", (data) => {
         const audio = new Audio(msgSoundSrc)
         if (user?.uid !== data.user.id) {
@@ -371,25 +375,25 @@ const Room = () => {
                                   {"You"}
                                 </span>
                               </motion.div>
-                              {peers.map((user) => (
+                              {peers.map((participant) => (
                                 <motion.div
                                   layout
                                   initial={{ x: 100, opacity: 0 }}
                                   animate={{ x: 0, opacity: 1 }}
                                   transition={{ duration: 0.08 }}
                                   exit={{ opacity: 0 }}
-                                  key={user.peerID}
+                                  key={participant.peerID}
                                   className="p-2 flex bg-gray items-center transition-all  gap-2 rounded-lg"
                                 >
                                   <img
                                     src={
-                                      user.user.photoURL ||
+                                      participant.user.photoURL ||
                                       "https://parkridgevet.com.au/wp-content/uploads/2020/11/Profile-300x300.png"
                                     }
                                     className="block w-8 h-8 aspect-square rounded-full mr-2"
                                   />
                                   <span className="font-medium text-sm">
-                                    {user.user.name || currName}
+                                    {participant.user?.name || formatName(participant.user)}
                                   </span>
                                 </motion.div>
                               ))}

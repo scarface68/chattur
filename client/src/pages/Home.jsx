@@ -52,7 +52,6 @@ const Home = () => {
     setModal(false)
   }
   function showPrompt() {
-    console.log("woeowprow")
     setModal(true)
   }
 
