@@ -128,7 +128,7 @@ const Room = () => {
 
   useEffect(() => {
     const unsub = () => {
-      socket.current = io.connect("http://localhost:5000")
+      socket.current = io.connect(`${process.env.REACT_APP_BACKEND_URL} || localhost:5000/`)
       socket.current.on("message", (data) => {
         const audio = new Audio(msgSoundSrc)
         if (user?.uid !== data.user.id) {
