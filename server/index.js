@@ -3,9 +3,16 @@ const http = require("http")
 const cors = require("cors")
 const app = express()
 const server = http.createServer(app)
+
+// Enable CORS for all routes
+app.use(cors())
+
 const io = require("socket.io")(server, {
   cors: {
-    origin: "*",
+    origin: "*", // Allow all origins
+    methods: ["GET", "POST"], // Allow these HTTP methods
+    allowedHeaders: ["my-custom-header"], // Allow these custom headers
+    credentials: true // Enable credentials (cookies, authorization headers, etc.)
   },
 })
 
