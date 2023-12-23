@@ -5,12 +5,8 @@ const app = express()
 const server = http.createServer(app)
 const io = require("socket.io")(server, {
   cors: {
-    origin: process.env.ORIGIN || "*",
-    methods: ["GET", "POST"],
-    transports: ["websocket", "polling"],
-    credentials: true
+    origin: "*",
   },
-  allowEIO3: true
 })
 
 const PORT = process.env.PORT || 5000
