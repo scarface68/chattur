@@ -108,9 +108,9 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <footer className="bg-inherit inset-x-0 bottom-0 text-xs font-semibold dark:text-gray absolute text-slate-400 md:justify-between mb-0 ">
+{/*       <footer className="bg-inherit inset-x-0 bottom-0 text-xs font-semibold dark:text-gray absolute text-slate-400 md:justify-between mb-0 ">
         <p className="text-center">© made with ❤️ by khuntia, sai and suraj</p>
-      </footer>
+      </footer> */}
     </div>
   )
 }
